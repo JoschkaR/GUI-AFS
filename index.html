@@ -7,6 +7,19 @@
     <title>AFS GUI</title>
     <link rel="stylesheet" href="style.css">
 
+    <style>
+        .button2 {
+        background-color: #4CAF50; /* Green */
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        }
+    </style>
+
     <script>
         function tempButton(){
             actMode.innerHTML = "Temperature mode";            
@@ -30,18 +43,25 @@
         Please select the control mode
     </div>
 
-    <div>
-        <button onclick="tempButton()">Temperature</button>
-        <button onclick="timeButton()">Time</button>
-        <button onclick="humidityButton()">Humidity</button>
+    <div class="text">
+        <button onclick="tempButton()" class="button">Temperature</button>        
+    </div>
 
+    <div class="text">
+        <button onclick="timeButton()" class="button">Time</button>
+    </div>
+
+    <div class="text">
+        <button onclick="humidityButton()" class="button">Humidity</button>
     </div>
 
     <div class="textHeadline">
         The current mode is
     </div>
 
-    <div class="text" id="actMode"> halloWorld</div>
+    <div class="container background" id="actMode"> 
+        Time
+    </div>
 
 </body>
 </html>
