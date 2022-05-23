@@ -4,10 +4,44 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>AFS GUI</title>
+    <link rel="stylesheet" href="style.css">
 
+    <script>
+        function tempButton(){
+            actMode.innerHTML = "Temperature mode";            
+        }
+
+        function timeButton(){
+            actMode.innerHTML = "Time mode";            
+        }
+
+        function humidityButton(){
+            actMode.innerHTML = "Humidity mode";            
+        }
+    </script>
 </head>
 <body>
-    <button> Temperature mode</button>
+    <div>
+        <img src="img/menu.png">
+    </div>
+
+    <div class="textHeadline">
+        Please select the control mode
+    </div>
+
+    <div>
+        <button onclick="tempButton()">Temperature</button>
+        <button onclick="timeButton()">Time</button>
+        <button onclick="humidityButton()">Humidity</button>
+
+    </div>
+
+    <div class="textHeadline">
+        The current mode is
+    </div>
+
+    <div class="text" id="actMode"> halloWorld</div>
+
 </body>
 </html>
