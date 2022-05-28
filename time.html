@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time</title>
+    <link rel="stylesheet" href="style.css">
+
+    <script>
+        let minutes = 5;
+        let seconds = 0; 
+
+        function upMinutes(){
+            if(minutes < 60){
+                if(minutes == 59){
+                    seconds = 0;
+                }
+                minutes = minutes + 1; 
+                printDifTime(); 
+            }
+        }
+
+        function downMinutes(){
+            if(minutes > 1){
+                minutes = minutes - 1; 
+                printDifTime(); 
+            }
+        }
+
+        function upSeconds(){
+            if(seconds < 45 && minutes < 60){
+                seconds = seconds + 15; 
+                printDifTime(); 
+            }else{
+                seconds = 0;
+                upMinutes(); 
+            }
+        }
+
+        function downSeconds(){
+            if(seconds >= 15){
+                seconds = seconds - 15;
+                printDifTime();
+            }else if(minutes > 1){
+                seconds = 45;
+                downMinutes(); 
+            }
+        }
+
+        function printDifTime(){
+            if(minutes < 10){
+                if(seconds < 10){
+                    difTime.innerHTML = '0' + minutes + ' : ' + '0' + seconds;
+                }else{
+                    difTime.innerHTML = '0' + minutes + ' : ' + seconds;
+                }
+               
+            }else{
+                if(seconds < 10){
+                    difTime.innerHTML = minutes + ' : ' + '0' + seconds;
+                }else{
+                    difTime.innerHTML = minutes + ' : ' + seconds;
+                }
+            }      
+        }
+
+
+    </script>
+
+</head>
+<body>
+    <div>
+        <a href="navigation.html">
+            <img src="img/menu.png">
+        </a>
+    </div>
+
+    <div class="textHeadline2">
+        Please enter the desired temperature difference using the arrow keys
+    </div>
+
+    <div>
+        <img class="upLeft" onclick="upMinutes()" src="img/up.png" alt="">
+
+        <img class="upRight" onclick="upSeconds()" src="img/up.png" alt="">
+    </div>
+
+    <div>
+        
+        <div class="timeDesign">
+            <p class="timeText" id="difTime">
+                05 : 00
+            </p>
+        </div>
+    </div>
+
+    <div>
+        <img class="downLeft" onclick="downMinutes()" src="img/down.png" alt="">
+
+        <img class="downRight" onclick="downSeconds()" src="img/down.png" alt="">
+    </div>
+</body>
+</html>
