@@ -19,7 +19,7 @@
     color: white;
     font-family: 'Roboto', sans-serif;
     text-align: center;
-    line-height: 4;
+    line-height: 2;
 }
 
 .button{
@@ -45,4 +45,34 @@
     display: grid;
     justify-content: center;
     align-items: center;
+ }
+
+ .currentModeDesine{
+    font-size: 36px;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    line-height: 6;
+ }
+
+ .actModeDesign{
+    position: absolute;
+    width: 400px;
+    height: 40px;
+    z-index: 15;
+    top: 50%;
+    left: 50%;
+    margin: -50px 0 0 -200px;
+
+ }
+
+ .actModeTextDesign{
+    font-size: 36px;
+    color: black;
+    background-color: #959599;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    line-height: normal;
+    border-radius: 0.25cm;
+
  }
