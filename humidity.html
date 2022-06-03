@@ -6,6 +6,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>humidity</title>
     <link rel="stylesheet" href="style.css">
+
+
+    <script>
+
+        let maxHumidity = 100;
+        let  minHumidity = 20; 
+        let humidity = 80;
+
+
+        function upHumidityDez(){
+            if(humidity <= maxHumidity - 10){
+                humidity = humidity + 10; 
+                printHumidity(); 
+            }
+        }
+
+        function downHumidityDez(){
+            if(humidity - 10 >= minHumidity){
+                humidity = humidity - 10; 
+                printHumidity(); 
+            }
+        }
+
+        function upHumidity(){
+            if(humidity <= maxHumidity - 1){
+                humidity = humidity + 1; 
+                printHumidity(); 
+            }
+        }
+
+        function downHumidity(){
+            if(humidity - 1 >= minHumidity){
+                humidity = humidity - 1; 
+                printHumidity(); 
+            }
+        }
+
+
+        function printHumidity(){
+
+            actHumidity.innerHTML = humidity + ' %'; 
+    
+        }
+    </script>
 </head>
 <body>
     <div>
@@ -13,8 +57,30 @@
             <img src="img/menu.png">
         </a>
     </div>
+
     <div class="textHeadline2">
-        not implementet yet
+        Please enter the desired humidity using the arrow keys
+    </div>
+
+    <div>
+        <img class="upLeft" onclick="upHumidityDez()" src="img/up.png" alt="">
+
+        <img class="upRight" onclick="upHumidity()" src="img/up.png" alt="">
+    </div>
+
+    <div>
+        
+        <div class="timeDesign">
+            <p class="timeText" id="actHumidity">
+                80 %
+            </p>
+        </div>
+    </div>
+
+    <div>
+        <img class="downLeft" onclick="downHumidityDez()" src="img/down.png" alt="">
+
+        <img class="downRight" onclick="downHumidity()" src="img/down.png" alt="">
     </div>
     
 </body>
